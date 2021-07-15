@@ -1,6 +1,6 @@
 ## [Warmup](https://www.hackerrank.com/domains/algorithms/warmup)
 
-|Problem Name|Problem Link
+|Problem Name|Problem Link|
 ---|---|---|---
 |A Very Big Sum|[Problem](https://www.hackerrank.com/challenges/a-very-big-sum/problem)|
 |Birthday Cake Candles|[Problem](https://www.hackerrank.com/challenges/birthday-cake-candles/problem)|
