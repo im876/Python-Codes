@@ -10,12 +10,18 @@ def knapSack(W, wt, val, n):
 	# Build table K[][] in bottom up manner
 	for i in range(n + 1):
 		for w in range(W + 1):
+			# Base Case
 			if i == 0 or w == 0:
 				K[i][w] = 0
+			# return the maximum of two cases:
+			# (1) nth item included
+			# (2) not included
 			elif wt[i-1] <= w:
-				K[i][w] = max(val[i-1]
-						+ K[i-1][w-wt[i-1]],
-							K[i-1][w])
+				K[i][w] = max(val[i-1]+ K[i-1][w-wt[i-1]], K[i-1][w])
+			# If weight of the nth item is
+			# more than Knapsack of capacity W,
+			# then this item cannot be included
+			# in the optimal solution
 			else:
 				K[i][w] = K[i-1][w]
 
@@ -23,8 +29,8 @@ def knapSack(W, wt, val, n):
 
 
 # Driver code
-val = [60, 100, 120]
-wt = [10, 20, 30]
-W = 50
+val = list(map(int, input().split()))
+wt = list(map(int, input().split()))
+W = int(input().strip())
 n = len(val)
 print(knapSack(W, wt, val, n))
